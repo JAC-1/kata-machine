@@ -1,0 +1,11 @@
+FROM alpine:latest 
+
+RUN apk add bash yarn
+
+WORKDIR /app
+
+COPY package*.json ./
+
+RUN yarn install
+
+COPY . .
